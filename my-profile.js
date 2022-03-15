@@ -81,21 +81,27 @@ console.log("Closest:", liList[1].closest("li")); //can find sibling or parent, 
 //Bonus C - Countdown Clock
 const countdownClock = document.createElement("div");
 
-const birthday = new Date('August 23');
+const birthday = new Date('March 8');
 // console.log(birthday.valueOf())
 setInterval(() => {
 
     let current = new Date(Date.now());
-    birthday.setYear(current.getFullYear());
-    //all time is referenced to GMT
-    const seconds = new Date(birthday - current).getSeconds();
-    const minutes = new Date(birthday - current).getMinutes();
-    const hours = new Date(birthday - current).getHours();
-    const days = new Date(birthday - current).getDate();
-    const months = new Date(birthday - current).getMonth();
-    const formatting = `Months: ${months} Days: ${days} Hours: ${hours} Minutes: ${minutes} Seconds: ${seconds}`;
-    countdownClock.innerText = `${formatting}`;
-  }, 1000);
+    ;
+    if(birthday.getMonth() < current.getMonth()){
+        birthday.setYear(current.getFullYear()+1);
+    }else{
+        birthday.setYear(current.getFullYear());
+    }
+        //all time is referenced to GMT
+        const seconds = new Date(birthday - current).getSeconds();
+        const minutes = new Date(birthday - current).getMinutes();
+        const hours = new Date(birthday - current).getHours();
+        const days = new Date(birthday - current).getDate();
+        const months = new Date(birthday - current).getMonth();
+        const formatting = `Months: ${months} Days: ${days} Hours: ${hours} Minutes: ${minutes} Seconds: ${seconds}`;
+        countdownClock.innerText = `${formatting}`;
+    }, 1000);
+
 
 //   if()
 
