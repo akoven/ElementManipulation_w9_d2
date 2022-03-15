@@ -64,8 +64,6 @@ document.body.append(myLocation);
 
 //Bonus A
 const myImg = document.createElement("img");
-// myImg.src =
-//   "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt1431045%2F&psig=AOvVaw0uyy9tDANoFVG2uugObE_L&ust=1647464423922000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOCpoqqByfYCFQAAAAAdAAAAABAD";
 
 myImg.setAttribute(
   "src",
@@ -81,3 +79,25 @@ stageOne.after(myImg);
 console.log("Closest:", liList[1].closest("li")); //can find sibling or parent, but nothing outside of parent
 
 //Bonus C - Countdown Clock
+const countdownClock = document.createElement("div");
+
+const birthday = new Date('August 23');
+// console.log(birthday.valueOf())
+setInterval(() => {
+
+    let current = new Date(Date.now());
+    birthday.setYear(current.getFullYear());
+    //all time is referenced to GMT
+    const seconds = new Date(birthday - current).getSeconds();
+    const minutes = new Date(birthday - current).getMinutes();
+    const hours = new Date(birthday - current).getHours();
+    const days = new Date(birthday - current).getDate();
+    const months = new Date(birthday - current).getMonth();
+    const formatting = `Months: ${months} Days: ${days} Hours: ${hours} Minutes: ${minutes} Seconds: ${seconds}`;
+    countdownClock.innerText = `${formatting}`;
+  }, 1000);
+
+//   if()
+
+  document.body.append(countdownClock);
+  countdownClock.setAttribute("class","countdown")

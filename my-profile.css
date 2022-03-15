@@ -19,3 +19,8 @@ img {
   width: 500px;
   height: 500px;
 }
+.countdown{
+    border: 10px dashed purple ;
+    margin: 10px;
+    padding: 10px;
+}
