@@ -45,8 +45,15 @@ liList.forEach((li) => {
 
 //Phase 3
 
-const clock = document.createElement("time");
+const myLocation = document.createElement("div");
 
-clock.innerText = `${Date.now()}`;
+const clock = document.createElement("span");
+// const time = Date(Date.now());
 
-document.body.append(clock);
+setInterval(() => {
+    let time = new Date(Date.now())
+    clock.innerText = `${time}`
+},1000)
+myLocation.append(`I live in City, State, and it's currently `,clock,` here.`);
+// myLocation.innerHTML = `<div>I live in City, State, and it's currently ${clock} here.</div>`
+document.body.append(myLocation);
