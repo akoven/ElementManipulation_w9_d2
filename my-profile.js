@@ -51,9 +51,33 @@ const clock = document.createElement("span");
 // const time = Date(Date.now());
 
 setInterval(() => {
-    let time = new Date(Date.now())
-    clock.innerText = `${time}`
-},1000)
-myLocation.append(`I live in City, State, and it's currently `,clock,` here.`);
+  let time = new Date(Date.now());
+  clock.innerText = `${time}`;
+}, 1000);
+myLocation.append(
+  `I live in City, State, and it's currently `,
+  clock,
+  ` here.`
+);
 // myLocation.innerHTML = `<div>I live in City, State, and it's currently ${clock} here.</div>`
 document.body.append(myLocation);
+
+//Bonus A
+const myImg = document.createElement("img");
+// myImg.src =
+//   "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt1431045%2F&psig=AOvVaw0uyy9tDANoFVG2uugObE_L&ust=1647464423922000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOCpoqqByfYCFQAAAAAdAAAAABAD";
+
+myImg.setAttribute(
+  "src",
+  "https://pbs.twimg.com/profile_images/1208234904405757953/mT0cFOVQ_400x400.jpg"
+);
+
+stageOne.after(myImg);
+
+//insert likes and dislikes, favorite restaurants, my activites
+
+//Bonus B
+
+console.log("Closest:", liList[1].closest("li")); //can find sibling or parent, but nothing outside of parent
+
+//Bonus C - Countdown Clock
