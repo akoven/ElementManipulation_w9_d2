@@ -1,0 +1,11 @@
+.name {
+  color: red;
+}
+
+.my-details {
+  border: 10px solid black;
+}
+
+.detail:hover {
+  background-color: yellow;
+}
